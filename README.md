@@ -36,7 +36,7 @@ We provide two models for inference: the standard `AuroBind` and the lightweight
 We provide a Jupyter Notebook demo for using AuroFast to perform inference on 10 targets.
 
 **1. Download Required Files:**
-To run the demo, Please download the demo trunk [here](https://drive.google.com/file/d/12pIDDCL7eOgTea0pLFrcTyx1qPCC9gpk/view?usp=sharing), and AuroFast model checkpoints [here](https://drive.google.com/file/d/1v5kIyTNLUMwOg5QopL7kayzu5T5EtLXR/view?usp=sharing).
+To run the demo, Please download the demo trunk [here](https://drive.google.com/drive/folders/1SztEkVRMsbRlVFYv9S_2bGOmKkkqh_Nj?usp=sharing), and AuroFast model checkpoints [here](https://drive.google.com/file/d/1v5kIyTNLUMwOg5QopL7kayzu5T5EtLXR/view?usp=sharing).
    > Please note, this model was also trained on only 10% of the full dataset.
 
 **2. File Placement:**

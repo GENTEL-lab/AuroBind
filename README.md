@@ -25,6 +25,7 @@ We provide two models for inference: the standard `AuroBind` and the lightweight
 3. **Installation and demo**:
 
    ```bash
+   cd src
    conda env create -f environment.yaml
    conda activate aurobind
    bash predict.sh
@@ -53,7 +54,7 @@ To obtain additional features_fast_X.pt files, please run the full AuroBind pipe
 
 - The implementation of **fast layernorm operators** is inspired by [OneFlow](https://github.com/Oneflow-Inc/oneflow) and [FastFold](https://github.com/hpcaitech/FastFold), following [Protenix](https://github.com/bytedance/Protenix)'s usage. 
 - Many components are adapted from [OpenFold](https://github.com/aqlaboratory/openfold), with substantial modifications and improvements by our team (except for the `LayerNorm` part).  
-- This repository implements the **Inference Data Pipeline** (including data/feature processing and MSA generation), drawing inspiration from [Boltz-1](https://github.com/jwohlwend/boltz). Some portions of the code are also adapted from [IntelliFold](https://github.com/IntelliGen-AI/IntelliFold).
+- This repository implements the Inference Data Pipeline (including data/feature processing and MSA generation), with conceptual inspiration from related tools such as [Boltz-1](https://github.com/jwohlwend/boltz), and selected code components adapted from [IntelliFold](https://github.com/IntelliGen-AI/IntelliFold).
 
 
 ## 4. License

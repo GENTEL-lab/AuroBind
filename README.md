@@ -40,12 +40,12 @@ To run the demo, Please download the demo trunk [here](https://drive.google.com/
    > Please note, this model was also trained on only 10% of the full dataset.
 
 **2. File Placement:**
-Unzip the downloaded files and place them in the src/AuraFast folder.
+Unzip the downloaded files and place them in the src/aurofast folder.
 
 **3. Run Demo:**
 Open and execute
 ```
-inference_aurafast_demo.ipynb
+inference_aurofast_demo.ipynb
 ```
 This will generate predictions for the input file `demo_input.csv`, and the results will be saved in `inference_result.csv`.
 To obtain additional features_fast_X.pt files, please run the full AuroBind pipeline.
@@ -54,7 +54,7 @@ To obtain additional features_fast_X.pt files, please run the full AuroBind pipe
 
 - The implementation of **fast layernorm operators** is inspired by [OneFlow](https://github.com/Oneflow-Inc/oneflow) and [FastFold](https://github.com/hpcaitech/FastFold), following [Protenix](https://github.com/bytedance/Protenix)'s usage. 
 - Many components are adapted from [OpenFold](https://github.com/aqlaboratory/openfold), with substantial modifications and improvements by our team (except for the `LayerNorm` part).  
-- This repository implements the Inference Data Pipeline (including data/feature processing and MSA generation), with conceptual inspiration from related tools such as [Boltz-1](https://github.com/jwohlwend/boltz), and selected code components adapted from [IntelliFold](https://github.com/IntelliGen-AI/IntelliFold).
+- This repository implements the Inference Data Pipeline (including data/feature processing and MSA generation) drawing conceptual inspiration and selectively reusing code components from [IntelliFold](https://github.com/IntelliGen-AI/IntelliFold).
 
 
 ## 4. License

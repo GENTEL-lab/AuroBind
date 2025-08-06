@@ -1,6 +1,7 @@
 
 #!/bin/bash
 # export LAYERNORM_TYPE=fast_layernorm
+# export USE_DEEPSPEED_EVO_ATTENTION=true
 #### CUTLASS_PATH example
 # export CUTLASS_PATH=../your/cutlass
 

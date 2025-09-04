@@ -120,3 +120,4 @@ dependencies:
       - urllib3==2.3.0
       - wandb==0.18.7
       - zstandard==0.23.0
+      - -i https://pypi.tuna.tsinghua.edu.cn/simple

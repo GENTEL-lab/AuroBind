@@ -57,7 +57,7 @@ To obtain additional features_fast_X.pt files, please run the full AuroBind pipe
 
 **We highly recommend using the [AuroBind Server](https://origene.lglab.ac.cn/#/aurobind) for user-friendly and accurate protein-ligand structure and fitness predictions.** It requires no installation and provides an intuitive web interface that lets you submit your sequences and visualize results directly in your browser.
 
-![IntelliFold Server](assets/aurobind-server-screenshot.png)
+![AuroBind Server](assets/aurobind-server-screenshot.png)
 
 ## 4. Acknowledgements
 

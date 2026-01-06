@@ -23,6 +23,7 @@ from aurobind.openfold.utils.tensor_utils import add
 from typing import Dict, Optional, Tuple
 import einops
 import numpy as np
+import os
 
 class AuxiliaryHeads(nn.Module):
     def __init__(self, config):
@@ -39,6 +40,17 @@ class AuxiliaryHeads(nn.Module):
 
         distogram_logits = self.distogram(outputs["z"])
         aux_out["distogram_logits"] = distogram_logits
+        feat_output_dir = feats.get("feat_output_dir", None)
+        if feat_output_dir is not None:
+            file_id = feats.get("file_id", None)
+            os.makedirs(os.path.join(feat_output_dir, file_id), exist_ok=True)
+            _seq_mask = feats["seq_mask"][0]
+            _pair_mask = _seq_mask[None, :] * _seq_mask[:, None]
+            seq_length = _seq_mask.sum()
+            torch.save({
+                    's': outputs["s"][0][_seq_mask],
+                    'z': outputs["z"][0][_pair_mask.bool()].reshape(seq_length,seq_length,-1),
+                }, os.path.join(feat_output_dir, file_id,f'features_{file_id}.pt'), _use_new_zipfile_serialization=True)
 
         head_pair_mask = feats["seq_mask"][:, None, :] * feats["seq_mask"][:, :, None]
         protein_mask = feats['is_protein']

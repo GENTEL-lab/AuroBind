@@ -21,7 +21,7 @@ $INPUT_DATA \
 --out_dir $OUTPUT_DIR \
 --num_diffusion_samples $NUM_DIFFUSION_SAMPLES \
 --cache $CACHE_DATA_DIR
-
+# --save_features
 
 
 # # The following is a demo to use Accelerate to run the script on a single machine with multiple GPUs.

@@ -1,0 +1,6 @@
+src/cache_data/
+src/output/
+src/test/
+__pycache__/
+*.py[cod]
+*$py.class

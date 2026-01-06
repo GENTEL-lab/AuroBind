@@ -277,7 +277,11 @@ def main(args):
     model = accelerator.prepare(model)
     accelerator.wait_for_everyone()
     model.eval()     
-
+    if args.save_features:
+        feat_output_dir = out_dir / "features"
+        feat_output_dir.mkdir(parents=True, exist_ok=True)
+    else:
+        feat_output_dir = None
     # Create DataLoader
     loader = accelerator.prepare(pred_loader)
     for batch_idx, input_features in tqdm(enumerate(loader), total=len(loader), disable= not accelerator.is_local_main_process, desc=f"Predicting"):      
@@ -288,7 +292,8 @@ def main(args):
             record = input_features.pop("record")[0]
             structure = input_features.pop("structure")
             input_features['msa'] = F.one_hot(input_features['msa'].long(),num_classes=32).float()
-            
+            input_features['feat_output_dir'] = feat_output_dir
+            input_features['file_id'] = record.id
             ### reference features woulb be changed in the forward pass, keep the original ones
             ref_keys = [key for key in input_features.keys() if 'ref_' in key]
             original_ref_features = [input_features[key] for key in ref_keys]
@@ -488,6 +493,11 @@ if __name__ == "__main__":
         "--return_similar_seq",
         action="store_true",
         help="Whether to return sequences similar to those in the training PDB dataset during inference. Default is False.",
+    )
+    parser.add_argument(
+        "--save_features",
+        action="store_true",
+        help="Whether to save the features for aurofast. Default is False.",
     )
     # parser.add_argument(
     #     "--no_potentials",

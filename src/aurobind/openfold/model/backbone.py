@@ -86,6 +86,8 @@ class BackboneTrunk(nn.Module):
         # This needs to be done manually for DeepSpeed's sake
         dtype = next(self.parameters()).dtype
         for k in feats:
+            if k == 'feat_output_dir' or k == 'file_id':
+                continue
             if feats[k].dtype == torch.float32:
                 feats[k] = feats[k].to(dtype=dtype)
 
